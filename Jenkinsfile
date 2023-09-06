@@ -39,15 +39,14 @@ pipeline{
                 // dir("$WORKSPACE"){
                 //     sh 'npm test'
                 // }
-                steps{
+             
                 pwsh(script: """
                 
                 npm test
 
                 
                 """)
-                }
-
+           
             }
         }
     }
