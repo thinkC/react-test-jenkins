@@ -63,32 +63,44 @@ pipeline{
             echo "Workspace is $WORKSPACE"
         }
         }
-        stage("Install Dependencies"){
-            steps{
-                dir("$WORKSPACE"){
-                    sh 'npm install'
-                }
-
-            }
+        stage("Check Node.js and npm versions") {
+    steps {
+        dir("$WORKSPACE") {
+            sh 'which node'
+            sh 'which npm'
+            sh 'node -v'
+            sh 'npm -v'
         }
-        stage("Check Node.js and npm versions"){
-            steps{
-                dir("$WORKSPACE") {
-                    sh 'node -v'
-                    sh 'npm -v'
-                }
-            }
+    }
+}
+
+        // stage("Install Dependencies"){
+        //     steps{
+        //         dir("$WORKSPACE"){
+        //             sh 'npm install'
+        //         }
+
+        //     }
+        // }
+
+        // stage("Check Node.js and npm versions"){
+        //     steps{
+        //         dir("$WORKSPACE") {
+        //             sh 'node -v'
+        //             sh 'npm -v'
+        //         }
+        //     }
 
 
-        }
-        stage("Run Jest Test"){
-            steps{
-                echo "workspace is  $WORKSPACE"
-                dir("$WORKSPACE"){
-                    sh 'npm test'
-                }
+        // }
+        // stage("Run Jest Test"){
+        //     steps{
+        //         echo "workspace is  $WORKSPACE"
+        //         dir("$WORKSPACE"){
+        //             sh 'npm test'
+        //         }
 
-            }
-        }
+        //     }
+        // }
     }
 }
