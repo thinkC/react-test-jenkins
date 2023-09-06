@@ -11,8 +11,8 @@ pipeline{
         stage("Run Jest Test"){
             steps{
                 echo "workspace is  $WORKSPACE"
-                dir("$WORKSPACE/react-test-jenkins"){
-                    sh '/c/Program Files/nodejs/npm test'
+                dir("$WORKSPACE\\react-test-jenkins"){
+                    sh 'C:\\Program Files\\nodejs\\npm\\npm test'
                 }
             }
         }
