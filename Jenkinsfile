@@ -9,7 +9,7 @@ pipeline{
         }
         stage("Install Dependencies"){
             steps{
-                dir("$WORKSPACE/react-test-jenkins"){
+                dir("$WORKSPACE\\react-test-jenkins"){
                     sh 'npm install'
                 }
             }
