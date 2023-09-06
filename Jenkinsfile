@@ -66,6 +66,7 @@ pipeline{
         stage("Check Node.js and npm versions") {
     steps {
         dir("$WORKSPACE") {
+            withEnv(["PATH+NODEJS=C:\\Program Files\\nodejs\\node", "PATH+NPM=C:\\Program Files\\nodejs\\npm"]) {
             sh 'which node'
             sh 'which npm'
             sh 'node -v'
