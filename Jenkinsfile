@@ -7,7 +7,7 @@ pipeline{
             echo "Workspace is $WORKSPACE"
         }
         }
-        stage{
+        stage("Run python script"){
             steps{
                 sh 'python test-jenkins.py'
             }
