@@ -7,13 +7,13 @@ pipeline{
             echo "$GIT_BRANCH"
         }
         }
-        // stage("Install Dependencies"){
-        //     steps{
-        //         dir("$WORKSPACE"){
-        //             sh 'npm install'
-        //         }
-        //     }
-        // }
+        stage("Install Dependencies"){
+            steps{
+                dir("$WORKSPACE"){
+                    sh 'npm install'
+                }
+            }
+        }
         stage("Check Node.js and npm versions"){
             steps{
                 sh 'node -v'
