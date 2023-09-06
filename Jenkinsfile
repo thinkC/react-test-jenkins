@@ -21,23 +21,27 @@ pipeline{
             }
         }
         stage("Check Node.js and npm versions"){
-            steps{
-                sh 'node -v'
-                sh 'npm -v'
-            }
+            // steps{
+            //     sh 'node -v'
+            //     sh 'npm -v'
+            // }
+            pwsh(script:"""
+            node -v
+            npm -v
+            """)
         }
         stage("Run Jest Test"){
             steps{
-                echo "workspace is  $WORKSPACE"
-                dir("$WORKSPACE"){
-                    sh 'npm test'
-                }
-                // pwsh(script: """
+                // echo "workspace is  $WORKSPACE"
+                // dir("$WORKSPACE"){
+                //     sh 'npm test'
+                // }
+                pwsh(script: """
                 
-                // npm test
+                npm test
 
                 
-                // """)
+                """)
             }
         }
     }
