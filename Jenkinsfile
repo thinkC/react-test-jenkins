@@ -80,7 +80,7 @@ pipeline{
     bat 'node -v'
     bat 'npm -v'
 }
-
+        }
         stage("Install Dependencies"){
             steps{
                 // dir("$WORKSPACE"){
@@ -110,5 +110,4 @@ pipeline{
             }
         }
     }
-}
 }
