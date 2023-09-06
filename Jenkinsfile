@@ -9,9 +9,15 @@ pipeline{
         }
         stage("Install Dependencies"){
             steps{
-                dir("$WORKSPACE"){
-                    sh 'npm install'
-                }
+                // dir("$WORKSPACE"){
+                //     sh 'npm install'
+                // }
+             pwsh(script: """
+                
+                npm install
+
+                
+                """)
             }
         }
         stage("Check Node.js and npm versions"){
