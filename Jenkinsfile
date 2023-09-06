@@ -81,14 +81,14 @@ pipeline{
     bat 'npm -v'
 }
 
-        // stage("Install Dependencies"){
-        //     steps{
-        //         dir("$WORKSPACE"){
-        //             sh 'npm install'
-        //         }
-
-        //     }
-        // }
+        stage("Install Dependencies"){
+            steps{
+                // dir("$WORKSPACE"){
+                //     sh 'npm install'
+                // }
+                bat 'npm install'
+            }
+        }
 
         // stage("Check Node.js and npm versions"){
         //     steps{
@@ -100,15 +100,15 @@ pipeline{
 
 
         // }
-        // stage("Run Jest Test"){
-        //     steps{
-        //         echo "workspace is  $WORKSPACE"
-        //         dir("$WORKSPACE"){
-        //             sh 'npm test'
-        //         }
-
-        //     }
-        // }
+        stage("Run Jest Test"){
+            steps{
+                echo "workspace is  $WORKSPACE"
+                // dir("$WORKSPACE"){
+                //     sh 'npm test'
+                // }
+                bat 'npm test'
+            }
+        }
     }
 }
 }
