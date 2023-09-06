@@ -72,8 +72,10 @@ pipeline{
         }
         stage("Check Node.js and npm versions"){
             steps{
-                sh 'node -v'
-                sh 'npm -v'
+                dir("$WORKSPACE") {
+                    sh 'node -v'
+                    sh 'npm -v'
+                }
             }
 
 
