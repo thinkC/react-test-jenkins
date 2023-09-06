@@ -9,7 +9,7 @@ pipeline{
         }
         stage("Run python script"){
             steps{
-                sh 'python ./test-jenkins.py'
+                sh 'python3 test-jenkins.py'
             }
         }
     }
