@@ -12,5 +12,11 @@ pipeline{
                 sh 'python3 test-jenkins.py'
             }
         }
+        stage("Run npm commands") {
+            steps {
+                sh '/home/ubuntu/.nvm/versions/node/v18.17.0/bin/node/npm install'  // Replace "/path/to/npm" with the actual path to npm
+                sh '/home/ubuntu/.nvm/versions/node/v18.17.0/bin/npm/npm test'     // Replace "/path/to/npm" with the actual path to npm
+            }
+        }
     }
 }
