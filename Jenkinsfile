@@ -16,11 +16,11 @@ pipeline{
                 sh 'C:\\Users\\M3Trainee\\AppData\\Local\\Programs\\Python\\Python311\\python.exe python3 test-jenkins.py'
             }
         }
-        stage("Run npm commands") {
-            steps {
-                sh 'C:\\Program Files\\nodejs npm install'  
-                sh 'C:\\Program Files\\nodejs npm test'    
-            }
-        }
+        // stage("Run npm commands") {
+        //     steps {
+        //         sh 'C:\\Program Files\\nodejs npm install'  
+        //         sh 'C:\\Program Files\\nodejs npm test'    
+        //     }
+        // }
     }
 }
