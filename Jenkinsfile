@@ -12,7 +12,7 @@ pipeline{
             steps{
                 echo "workspace is  $WORKSPACE"
                 dir("$WORKSPACE\\react-test-jenkins"){
-                    sh 'C:\\Program Files\\nodejs\\npm\\npm test'
+                    sh 'npm test'
                 }
             }
         }
