@@ -60,6 +60,7 @@ pipeline{
         stage("Verify Branch"){
         steps{
             echo "$GIT_BRANCH"
+            echo "Workspace is $WORKSPACE"
         }
         }
         stage("Install Dependencies"){
