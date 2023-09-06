@@ -7,13 +7,13 @@ pipeline{
             echo "$GIT_BRANCH"
         }
         }
-        stage("Install Dependencies"){
-            steps{
-                dir("$WORKSPACE/react-test-jenkins"){
-                    sh 'npm install'
-                }
-            }
-        }
+        // stage("Install Dependencies"){
+        //     steps{
+        //         dir("$WORKSPACE"){
+        //             sh 'npm install'
+        //         }
+        //     }
+        // }
         stage("Check Node.js and npm versions"){
             steps{
                 sh 'node -v'
@@ -23,7 +23,7 @@ pipeline{
         stage("Run Jest Test"){
             steps{
                 echo "workspace is  $WORKSPACE"
-                dir("$WORKSPACE/react-test-jenkins"){
+                dir("$WORKSPACE"){
                     sh 'npm test'
                 }
                 // pwsh(script: """
