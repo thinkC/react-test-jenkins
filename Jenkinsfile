@@ -2,7 +2,7 @@ pipeline{
     agent any
         tools {
         nodejs "NodeJS 18.17.0" // Use the name you specified
-        npm "npm 9.6.7" // Specify the npm version
+        // npm "npm 9.6.7" // Specify the npm version
     }
     stages{
         stage("Verify Branch"){
