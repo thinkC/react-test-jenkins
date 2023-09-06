@@ -65,18 +65,20 @@ pipeline{
         }
         stage("Check Node.js and npm versions") {
     steps {
-        dir("$WORKSPACE") {
-        //     withEnv(["PATH+NODEJS=C:\\Program Files\\nodejs", "PATH+NPM=C:\\Program Files\\nodejs"]) {
-        //     sh 'which node'
-        //     sh 'which npm'
-        //     sh 'node -v'
-        //     sh 'npm -v'
-        // }
-            sh 'which node'
-            sh 'which npm'
-            sh 'node -v'
-            sh 'npm -v'
-    }
+    //     dir("$WORKSPACE") {
+    //     //     withEnv(["PATH+NODEJS=C:\\Program Files\\nodejs", "PATH+NPM=C:\\Program Files\\nodejs"]) {
+    //     //     sh 'which node'
+    //     //     sh 'which npm'
+    //     //     sh 'node -v'
+    //     //     sh 'npm -v'
+    //     // }
+    //         sh 'which node'
+    //         sh 'which npm'
+    //         sh 'node -v'
+    //         sh 'npm -v'
+    // }
+    bat 'node -v'
+    bat 'npm -v'
 }
 
         // stage("Install Dependencies"){
