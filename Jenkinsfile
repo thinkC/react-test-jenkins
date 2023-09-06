@@ -9,7 +9,7 @@ pipeline{
         }
         stage("Run python script"){
             steps{
-                sh 'C:\\Users\\M3Trainee\\AppData\\Local\\Programs\\Python\\Python311\\python3.exe test-jenkins.py'
+                sh 'python3 test-jenkins.py'
             }
         }
     }
