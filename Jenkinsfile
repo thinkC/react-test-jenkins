@@ -25,10 +25,13 @@ pipeline{
             //     sh 'node -v'
             //     sh 'npm -v'
             // }
+            steps{
             pwsh(script:"""
             node -v
             npm -v
             """)
+            }
+
         }
         stage("Run Jest Test"){
             steps{
@@ -36,12 +39,15 @@ pipeline{
                 // dir("$WORKSPACE"){
                 //     sh 'npm test'
                 // }
+                steps{
                 pwsh(script: """
                 
                 npm test
 
                 
                 """)
+                }
+
             }
         }
     }
